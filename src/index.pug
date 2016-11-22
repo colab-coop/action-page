@@ -1,0 +1,32 @@
+html
+	head
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(property="og:title" content="NO SUNOCO!")
+		meta(property="og:description" content="Sunoco, Suncor, Speedway and other companies are speding billions to attack the land and people of Standing Rock. Let them know it must stop now.")
+		meta(property="og:image" content="http://nosunoco.com/img/no-sunoco-share-image.png")
+		meta(name="twitter:card" content="summary_large_image")
+		meta(name="twitter:site" content="@nosunoco")
+		link(rel="stylesheet", type="text/css", href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css")
+		link(rel='stylesheet', href='/css/styles.css')
+		include partials/favicon.html
+		script(src="js/all.min.js")
+body
+	include partials/fb-share-preamble.html
+	header
+		h1.site-name #[span.site-name-no NO] SUNOCO!
+		div#promo Boycott the brutality and destruction of the company attacking Standing Rock
+	section#share
+		a#button__fb-share.button.button--blue(onclick="doOpenFbShare()" href="#") Share on Facebook
+		a#button__twitter-share.button.button--blue(href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fnosunoco.com&text=Boycott%20the%20companies%20attacking%20Standing%20Rock!&hashtags=nosunoco&related=nosunoco") Share on Twitter
+		p
+			Strong Don't buy gas from Sunoco
+			|  this holiday season.
+	section#explanation
+		include:marked partials/explanation.md
+	section#connect
+		h2 Stay Connected
+		p Follow the No Sunoco page on Facebook for updates.
+		include partials/fb-like-button.html
+	footer
+		include:marked partials/disclaimer.md
+	include partials/ga.html

@@ -1,0 +1,184 @@
+:root {
+	--blue: #05027F;
+	--yellow: #FFDC00;
+	--red: #D3001D;
+	--white: #FFF;
+}
+
+@custom-media --not-small (min-width: 850px);
+@custom-media --large (min-width: 1280px);
+
+/*@reset-global mobile;*/
+
+/*@import url('https://fonts.googleapis.com/css?family=Teko');*/
+@import url('https://fonts.googleapis.com/css?family=Oswald|Teko|Open Sans');
+
+html {
+	font-size: 125%;
+}
+
+body {
+	font-family: Open Sans, sans-serif;
+	color: var(--blue);
+	font-size: 1rem;
+	background-image: url('/img/subtle_grunge.png');
+}
+
+header, section, footer {
+	/*padding: 0 20%;*/
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Teko;
+	font-weight: bold;
+	text-align: center;
+}
+
+h1 {
+	font-size: 5rem;
+	@media (--not-small) {
+		font-size: 10rem;
+	}
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 100%;
+	text-align: left;
+	margin-bottom: 1rem;
+	font-family: Open Sans, sans-serif;
+	& strong {
+		font-weight: bolder;
+		text-decoration: underline;
+	}
+}
+
+a {
+	color: var(--red);
+	text-decoration: none;
+	&:visited {
+		color: var(--red);
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+ul {
+   list-style-type: initial;
+   list-style-position: outside;
+	 margin-left: 2rem;
+	 margin-bottom: 1rem;
+	 margin-top: 1rem;
+}
+
+li {
+display: list-item;
+}
+
+header {
+	color: var(--white);
+	background-color: var(--blue);
+	background-image: url('../img/crossed_arrows.svg'), url('../img/nosunoco-protector-header-bg.jpg');
+	background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-position: center, bottom;
+	background-size: contain, cover;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+footer {
+	color: var(--white);
+	background-color: var(--blue);
+	margin-top: 3rem;
+	padding: 1rem 10% 0.5rem;
+	& a {
+		color: var(--red);
+	}
+}
+
+section {
+	padding: 1rem 15% 0rem;
+}
+
+a.button {
+	display: block;
+	background: color(var(--red) alpha(-15%));
+	border-radius: 0.25em;
+	color: white;
+	text-decoration:none;
+	padding: 0.5em;
+	font-weight: bold;
+	font-size: 1.25rem;
+	width: 85%;
+	margin: 0.5rem auto;
+	&:hover {
+		background-color: var(--red);
+		color: var(--yellow);
+	}
+	@media (--not-small) {
+		margin: 0.5rem 0 2rem;
+		width: 45%;
+		display: inline-block;
+		font-size: 1.5rem;
+		&:first-child {
+			margin-right: 2%;
+		}
+	}
+}
+
+h1.site-name {
+	color: var(--yellow);
+	padding: 0 0;
+	margin: 0 0;
+	line-height: 100%;
+	font-style: italic;
+	/*margin: 0 auto;*/
+}
+
+.site-name-no {
+	/*color: var(--red);*/
+	text-decoration: underline;
+}
+
+#promo {
+	font-family: Teko, sans-serif;
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 120%;
+	margin: 0 auto;
+	text-align: center;
+	@media (--not-small) {
+		font-size: 3rem;
+		width: 30rem;
+	}
+}
+
+#explanation {
+}
+
+#share {
+	margin-top: 1rem;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
+	@media (--large) {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+}
+
+.fb-like-container {
+	width: 100%;
+}
