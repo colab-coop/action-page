@@ -1,0 +1,9 @@
+footer {
+	color: var(--white);
+	background-color: var(--blue);
+	margin-top: 3rem;
+	padding: 1rem 10% 0.5rem;
+	& a {
+		color: var(--red);
+	}
+}

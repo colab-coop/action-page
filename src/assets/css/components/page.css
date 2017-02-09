@@ -1,0 +1,7 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background: url('/img/olb-standing-rock-fist@1024h.jpg') no-repeat center center fixed;
+}

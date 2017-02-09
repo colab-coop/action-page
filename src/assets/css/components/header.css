@@ -1,0 +1,40 @@
+header {
+	color: var(--white);
+	padding-bottom: 1em;
+	padding-top: 1em;
+	height: 100%;
+}
+
+#main-logo {
+	width: 33%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1.site-name {
+	color: var(--yellow);
+	padding: 0 0;
+	margin: 0 0;
+	line-height: 100%;
+	font-style: italic;
+	/*margin: 0 auto;*/
+}
+
+.site-name-no {
+	/*color: var(--red);*/
+	text-decoration: underline;
+}
+
+#promo {
+	font-family: Teko, sans-serif;
+	font-weight: 500;
+	font-size: 2rem;
+	line-height: 120%;
+	margin: 0 auto;
+	text-align: center;
+	@media (--not-small) {
+		font-size: 3rem;
+		width: 30rem;
+	}
+}

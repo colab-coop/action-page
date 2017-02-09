@@ -1,0 +1,13 @@
+a.link__bumper-sticker {
+	border: 2px solid var(--red);
+	display: block;
+		width: 100%;
+		max-width: 512px;
+}
+
+.img__bumper-sticker {
+		width: 100%;
+		max-width: 512px;
+		padding: 0;
+		display: block;
+}

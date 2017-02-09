@@ -1,0 +1,5 @@
+/* Action Network Overrides */
+
+#can_embed_form input[type="submit"] {
+	background-color: color(var(--red) alpha(-15%)) !important;
+}

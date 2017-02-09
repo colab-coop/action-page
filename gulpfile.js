@@ -18,12 +18,13 @@ var gulp        = require('gulp'),
     image       = require('gulp-image');
 
 var awspublish = require('gulp-awspublish');
-
+var postcssImport = require("postcss-import");
 
 // --- Basic Tasks ---
 gulp.task('css', function() {
   var processors = [
     cssreset(),
+    postcssImport(),
     cssnext({browsers: ['last 1 version']}),
     // opacity,
   ];
@@ -67,7 +68,7 @@ gulp.task('express', function() {
 
 gulp.task('watch', function () {
   livereload.listen();
-  gulp.watch('src/assets/css/*.css',['css']);
+  gulp.watch('src/assets/css/**/*.css',['css']);
   gulp.watch('src/assets/js/*.js',['js']);
   gulp.watch('src/*.pug',['templates']);
   gulp.watch('src/partials/*.*',['templates']);

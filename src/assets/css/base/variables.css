@@ -1,0 +1,9 @@
+:root {
+	--blue: #05027F;
+	--yellow: #FFDC00;
+	--red: #D3001D;
+	--white: #FFF;
+}
+
+@custom-media --not-small (min-width: 850px);
+@custom-media --large (min-width: 1280px);

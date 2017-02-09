@@ -1,0 +1,10 @@
+#share {
+	margin-top: 1rem;
+	text-align: center;
+	padding-left: 5%;
+	padding-right: 5%;
+	@media (--large) {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+}

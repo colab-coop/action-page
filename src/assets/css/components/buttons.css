@@ -1,0 +1,25 @@
+a.button {
+	display: block;
+	background: color(var(--red) alpha(-15%));
+	border-radius: 0.25em;
+	color: white;
+	text-decoration:none;
+	padding: 0.5em;
+	font-weight: bold;
+	font-size: 1.25rem;
+	width: 85%;
+	margin: 0.5rem auto;
+	&:hover {
+		background-color: var(--red);
+		color: var(--yellow);
+	}
+	@media (--not-small) {
+		margin: 0.5rem 0 2rem;
+		width: 45%;
+		display: inline-block;
+		font-size: 1.5rem;
+		&:first-child {
+			margin-right: 2%;
+		}
+	}
+}
