@@ -1,26 +1,38 @@
-## Sunoco and its parent company Energy Transfer Partners have secured **over $6 billion in credit toward construction of the Dakota Access Pipeline**.
+## WHY SUNOCO
 
-Because of Sunoco and its partners:
+Sunoco is the company behind the DAPL. On November 21st, 2016 Sunoco Logistics
+announced a merger with Energy Transfer Partners, the prime investor of the
+Dakota Access Pipeline. This will make Sunoco a $20 billion dollar conglomerate,
+and the prime investor in DAPL, with over $6 billion invested in the project.
+Now they own this project, which is both a time bomb for North Dakota and
+literally adding fuel to the fire of our warming planet.
 
-* Water protectors and members of the Standing Rock Sioux have been harassed,
-  beaten and attacked.
-* Drilling has already begun, disrespecting the Standing Rock Sioux and violating
-  treaties.
-* People and ecosystems from the Dakotas to the Mississippi are at risk.
+They own this now.
 
-These companies have spent too long in the shadows.
+It’s time to hold Sunoco and its affiliated brands Stripes and Speedway accountable
+for the assault on Standing Rock
 
-It's time to hold all the DAPL companies accountable for their actions and
-the violence being undertaken on their behalf. Boycott Sunoco, Suncor, Speedway,
-Stripes, their partner companies and the banks who are backing them.
+## WHY NOW
 
-For more information on the financial backers of the DAPL see [this
-article](http://usuncut.com/climate/boycott-banks-financing-attacks-native-american-protesters/).
+Restarting the DAPL project, the new administration has swept aside the rights
+and voices of the natural stewards of this territory -- the water protectors and
+tribal members of Standing Rock Sioux. Trump put the profits of multinational
+oil corporations (in which Trump himself was a major investor just as recently
+as a few weeks ago) over the health and safety of people. All this in service of
+a pipe dream of jobs (that will be few) and endless cheap energy (which is
+neither).
 
-**UPDATE**: Sunoco will be [acquiring and merging with ETP][etp-sunoco-merger]
-in 2017 for $20 billion!.
+Now, we all need stand with the water protectors before it’s too late.
 
-Make sure the world knows the truth about Sunoco and the companies behind the
-attacks at Standing Rock. Spread the word about the boycott.
+## WHY BOYCOTT
 
-[etp-sunoco-merger]: http://www.cnbc.com/2016/11/21/first-trump-deal-sunoco-logistics-to-acquire-energy-transfer-partners.html
+Our boycott speaks to Sunoco in the language it understands: dollars. We cannot
+participate as Sunoco profits off the destruction of Native land and water--in
+North Dakota or anywhere else. We cannot allow Sunoco to hide in the shadows of
+the DAPL project. Just as the anti-apartheid movement connected Shell Oil and
+Coca-Cola to the atrocities of the South African regime, our boycott will link
+Sunoco with the atrocities at Standing Rock against Indigenous peoples and their
+allies.
+
+Share this widely, let your friends and family know that they can stand
+with the water protectors at Standing Rock by boycotting Sunoco, now.  
