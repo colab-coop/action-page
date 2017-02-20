@@ -41,7 +41,7 @@
                 "cloudfront:ListInvalidations"
             ],
             "Resource": [
-                "*"
+                "arn:aws:cloudfront:::E1CYKWAL96AI52"
             ]
         }
     ]
