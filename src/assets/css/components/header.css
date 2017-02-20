@@ -3,13 +3,17 @@ header {
 	padding-bottom: 1em;
 	padding-top: 1em;
 	height: 100%;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	@media (--not-small) {
+		width: 33%;
+	}
 }
 
 #main-logo {
-	width: 33%;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
 }
 
 h1.site-name {
@@ -29,12 +33,12 @@ h1.site-name {
 #promo {
 	font-family: Teko, sans-serif;
 	font-weight: 500;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	line-height: 120%;
 	margin: 0 auto;
 	text-align: center;
+	text-shadow: 2px 2px var(--blue);
 	@media (--not-small) {
-		font-size: 3rem;
-		width: 30rem;
+		font-size: 2rem;
 	}
 }
