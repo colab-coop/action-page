@@ -17,14 +17,15 @@ var gulp        = require('gulp'),
     server      = tinylr(),
     image       = require('gulp-image');
 
-var awspublish = require('gulp-awspublish');
+var awspublish = require('gulp-awspublish'),
+    cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
 var postcssImport = require("postcss-import");
 
 // --- Basic Tasks ---
 gulp.task('css', function() {
   var processors = [
-    cssreset(),
     postcssImport(),
+    cssreset(),
     cssnext({browsers: ['last 1 version']}),
     // opacity,
   ];
@@ -74,25 +75,36 @@ gulp.task('watch', function () {
   gulp.watch('src/partials/*.*',['templates']);
 });
 
+gulp.task('css:prod', function() {
+  var processors = [
+    cssreset(),
+    postcssImport(),
+    cssnext({browsers: ['last 1 version']}),
+    // opacity,
+  ];
+  return gulp.src('src/assets/css/styles.css')
+  .pipe(postcss(processors))
+  .pipe(gulp.dest('dist/css'))
+});
+
+// create a new publisher using S3 options
+// http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
+var publisher = awspublish.create({
+  region: 'us-east-1',
+  params: {
+    Bucket: 'nosunoco.com'
+  }
+}, {
+  cacheFileName: '/tmp/nosunoco.cache'
+});
+
+// define custom headers
+var headers = {
+  // 'Cache-Control': 'max-age=315360000, no-transform, public'
+  // ...
+};
+
 gulp.task('publish', function() {
-
-  // create a new publisher using S3 options
-  // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
-  var publisher = awspublish.create({
-    region: 'us-east-1',
-    params: {
-      Bucket: 'nosunoco.com'
-    }
-  }, {
-    cacheFileName: '/tmp/nosunoco.cache'
-  });
-
-  // define custom headers
-  var headers = {
-    // 'Cache-Control': 'max-age=315360000, no-transform, public'
-    // ...
-  };
-
   return gulp.src('./dist/**/*')
      // gzip, Set Content-Encoding headers and add .gz extension
     // .pipe(awspublish.gzip({ ext: '.gz' }))
@@ -108,6 +120,25 @@ gulp.task('publish', function() {
      // print upload updates to console
     .pipe(awspublish.reporter());
 });
+
+var cfSettings = {
+  distribution: 'E1CYKWAL96AI52', // Cloudfront distribution ID
+  wait: true,                     // Whether to wait until invalidation is completed (default: false)
+  indexRootPath: true             // Invalidate index.html root paths (`foo/index.html` and `foo/`) (default: false)
+}
+
+gulp.task('invalidate', function () {
+  return gulp.src('./dist/**/*')
+    .pipe(publisher.publish())
+    .pipe(cloudfront(cfSettings))
+    .pipe(publisher.cache())
+    .pipe(awspublish.reporter());
+});
+
+gulp.task('deploy', ['js','css:prod','templates'], function() {
+  gulp.start('invalidate');
+});
+
 
 // Default Task
 gulp.task('default', ['js','css','templates', 'images', 'express', 'watch']);
