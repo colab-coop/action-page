@@ -1,0 +1,48 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:UploadServerCertificate",
+                "iam:UpdateServerCertificate",
+                "iam:DeleteServerCertificate"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectACL"
+            ],
+            "Resource": [
+                "arn:aws:s3:::nosunoco.com/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::nosunoco.com/.well-known/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudfront:GetDistributionConfig",
+                "cloudfront:UpdateDistribution",
+                "cloudfront:CreateInvalidation",
+                "cloudfront:GetInvalidation",
+                "cloudfront:ListInvalidations"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
