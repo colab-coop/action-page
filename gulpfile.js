@@ -48,7 +48,10 @@ gulp.task('js', function() {
 gulp.task('templates', function() {
   return gulp.src('src/*.pug')
     .pipe(pug({
-      pretty: true
+      pretty: true,
+      locals: {
+        textTwitterMessage: encodeURIComponent("DAPL's violence, aggression, and disregard of #StandingRock and their rights makes me say #NoSunoco")
+      }
     }))
     .pipe(gulp.dest('dist/'))
     .pipe( livereload( server ));
