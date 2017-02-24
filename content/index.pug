@@ -1,0 +1,37 @@
+html
+	head
+		title #{title}
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(property="og:title" content=metatitle)
+		meta(property="og:url" content=metaurl)
+		meta(property="fb:app_id" content=metaappid)
+		meta(property="og:description" content=metaappdescription)
+		meta(property="og:image" content=metaimage)
+		meta(name="twitter:card" content="summary_large_image")
+		meta(name="twitter:site" content=metatwittersite)
+		link(rel='stylesheet', href='/css/styles.css')
+		include favicon.html
+		script(src="js/all.min.js")
+body
+	include fb-share-preamble.html
+	header
+		img(src="/img/" + mainlogo)#main-logo.logo
+		include header.pug
+	section#preamble
+		include preamble.pug
+	section#join
+		include embed-actionnetwork.html
+	section#explanation
+		include:marked explanation.md
+	section#share
+		include fb-share.pug
+		include twitter-share.pug
+	section#connect
+		h2 Stay Connected
+		p Follow the #{fbpagetitle} page on Facebook for updates.
+		include fb-like-button.html
+	section#bumper-sticker
+		include bumper-sticker.pug
+	footer
+		include:marked disclaimer.md
+	include ga.html
