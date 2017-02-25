@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
     sourcemaps  = require('gulp-sourcemaps'),
     uglify      = require('gulp-uglify'),
     pug         = require('gulp-pug'),
+    template    = require('gulp-template'),
     concat      = require('gulp-concat'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
@@ -27,23 +28,22 @@ gulp.task('css', function() {
   var processors = [
     postcssImport(),
     cssreset(),
-    cssnext({browsers: ['last 1 version']}),
-    // opacity,
+    cssnext({browsers: ['last 1 version']})
   ];
-  return gulp.src('assets/css/styles.css')
+  return gulp.src('content/assets/css/styles.css')
   .pipe(sourcemaps.init())
   .pipe(postcss(processors))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/css'))
-  .pipe(livereload( server));
+  .pipe(livereload(server));
 });
 
 gulp.task('js', function() {
-  return gulp.src('assets/js/*.js')
-    .pipe( uglify() )
-    .pipe( concat('all.min.js'))
-    .pipe( gulp.dest('dist/js'))
-    .pipe( livereload( server));
+  return gulp.src('content/assets/js/*.js')
+    .pipe(uglify())
+    .pipe(concat('all.min.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(livereload(server));
 });
 
 gulp.task('templates', function() {
@@ -52,12 +52,13 @@ gulp.task('templates', function() {
       pretty: true,
       locals: config
     }))
+    .pipe(template(config))
     .pipe(gulp.dest('dist/'))
-    .pipe( livereload( server ));
+    .pipe(livereload(server));
 });
 
 gulp.task('images', function() {
-  gulp.src('assets/img/*')
+  gulp.src('content/assets/img/*')
       .pipe(image())
       .pipe(gulp.dest('dist/img'));
 });
@@ -71,8 +72,8 @@ gulp.task('express', function() {
 
 gulp.task('watch', function () {
   livereload.listen();
-  gulp.watch('assets/css/**/*.css',['css']);
-  gulp.watch('assets/js/*.js',['js']);
+  gulp.watch('content/assets/css/**/*.css',['css']);
+  gulp.watch('content/assets/js/*.js',['js']);
   gulp.watch('content/*.*',['templates']);
 });
 
@@ -83,7 +84,7 @@ gulp.task('css:prod', function() {
     cssnext({browsers: ['last 1 version']}),
     // opacity,
   ];
-  return gulp.src('assets/css/styles.css')
+  return gulp.src('content/assets/css/styles.css')
   .pipe(postcss(processors))
   .pipe(gulp.dest('dist/css'))
 });

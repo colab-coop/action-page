@@ -5,13 +5,31 @@ module.exports = {
   awsCache: '/tmp/actionpage.cache',
   cloudFrontDistID: 'ABCD1234',
   title: 'Action-Page Title',
-  metatitle: 'Action-Page',
-  metaurl: 'http://awesomeactionpage.com/',
-  metaappid: '1234567890',
-  metaappdescription: 'This is a lengthier description of the action page',
-  metaimage: 'https://awesomeactionpage.com/actionpage.png',
-  metatwittersite: '@awesomeactionpage',
-  mainlogo: 'action-page-logo.svg',
-  textTwitterMessage: encodeURIComponent("A boilerplate for creating compelling, super-fast one-page action landings for Action Network campaigns using just HTML, CSS and AWS."),
-  fbpagetitle: 'Action Page'
+  mainlogo: 'nosunoco-logo.svg',
+  actionNetwork: {
+    id: 'boycott-sunoco'
+  },
+  meta: {
+    "og:title": 'Action-Page',
+    "og:url": 'https://awesomeactionpage.com/',
+    "og:description": 'This is a lengthier description of the action page',
+    "og:image": 'https://awesomeactionpage.com/actionpage.png',
+    "twitter:site": '@awesomeactionpage'
+  },
+  twitter: {
+    url: encodeURIComponent('https://awesomeactionpage.com/'),
+    text: encodeURIComponent('A boilerplate for creating compelling, super-fast one-page action landings for Action Network campaigns using just HTML, CSS and AWS.'),
+    related: 'actionpage',
+    hashtags: 'actionpage, skeleton'
+  },
+  fb: {
+    app_id: '573217829552127',
+    pagetitle: 'Action Page',
+    href: 'https://www.facebook.com/No-Sunoco-1243314592371578/'
+  },
+  google: {
+    analytics: {
+      id: 'UA-87440490-1'
+    }
+  }
 }
