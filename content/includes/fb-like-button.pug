@@ -1,0 +1,15 @@
+div(class="fb-like-container")
+	div(
+		class="fb-page"
+		data-href=fb.href
+		data-small-header="true"
+		data-adapt-container-width="true"
+		data-hide-cover="true"
+		data-show-facepile="true"
+	)
+		blockquote(
+			cite=fb.href
+			class="fb-xfbml-parse-ignore"
+		)
+			a(href=fb.href)
+				#{fb.pagetitle}

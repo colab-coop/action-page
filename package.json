@@ -1,7 +1,7 @@
 {
-  "name": "nosonoco.org",
-  "version": "1.0.0",
-  "description": "",
+  "name": "action-page",
+  "version": "0.1.0",
+  "description": "A boilerplate for creating compelling, super-fast one-page action landings for Action Network campaigns using just HTML, CSS and AWS.",
   "main": "index.js",
   "dependencies": {
     "connect-livereload": "^0.6.0",
@@ -9,8 +9,10 @@
     "gulp-cssnext": "^1.0.1",
     "gulp-csso": "^2.0.0",
     "gulp-jade": "^1.1.0",
+    "gulp-postcss": "^6.3.0",
     "gulp-pug": "^3.1.0",
     "gulp-sourcemaps": "^2.2.0",
+    "gulp-template": "^4.0.0",
     "gulp-uglify": "^2.0.0",
     "handlebars": "^4.0.5",
     "jstransformer-marked": "^1.0.1",

@@ -7,6 +7,7 @@ var gulp        = require('gulp'),
     sourcemaps  = require('gulp-sourcemaps'),
     uglify      = require('gulp-uglify'),
     pug         = require('gulp-pug'),
+    template    = require('gulp-template'),
     concat      = require('gulp-concat'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
@@ -15,7 +16,8 @@ var gulp        = require('gulp'),
     marked      = require('marked'), // For :markdown filter in pug
     path        = require('path'),
     server      = tinylr(),
-    image       = require('gulp-image');
+    image       = require('gulp-image'),
+    config      = require('./config.js');
 
 var awspublish = require('gulp-awspublish'),
     cloudfront = require('gulp-cloudfront-invalidate-aws-publish');
@@ -26,39 +28,38 @@ gulp.task('css', function() {
   var processors = [
     postcssImport(),
     cssreset(),
-    cssnext({browsers: ['last 1 version']}),
-    // opacity,
+    cssnext({browsers: ['last 1 version']})
   ];
-  return gulp.src('src/assets/css/styles.css')
+  return gulp.src('content/assets/css/styles.css')
   .pipe(sourcemaps.init())
   .pipe(postcss(processors))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('dist/css'))
-  .pipe(livereload( server));
+  .pipe(livereload(server));
 });
 
 gulp.task('js', function() {
-  return gulp.src('src/assets/js/*.js')
-    .pipe( uglify() )
-    .pipe( concat('all.min.js'))
-    .pipe( gulp.dest('dist/js'))
-    .pipe( livereload( server));
+  return gulp.src('content/assets/js/*.js')
+    .pipe(template(config))
+    .pipe(uglify())
+    .pipe(concat('all.min.js'))
+    .pipe(gulp.dest('dist/js'))
+    .pipe(livereload(server));
 });
 
 gulp.task('templates', function() {
-  return gulp.src('src/*.pug')
+  return gulp.src('content/index.pug')
     .pipe(pug({
       pretty: true,
-      locals: {
-        textTwitterMessage: encodeURIComponent("DAPL's violence, aggression, and disregard of #StandingRock and their rights makes me say #NoSunoco")
-      }
+      locals: config
     }))
+    .pipe(template(config))
     .pipe(gulp.dest('dist/'))
-    .pipe( livereload( server ));
+    .pipe(livereload(server));
 });
 
 gulp.task('images', function() {
-  gulp.src('./src/assets/img/*')
+  gulp.src('content/assets/img/*')
       .pipe(image())
       .pipe(gulp.dest('dist/img'));
 });
@@ -66,16 +67,15 @@ gulp.task('images', function() {
 gulp.task('express', function() {
   app.use(require('connect-livereload')());
   app.use(express.static(path.resolve('./dist')));
-  app.listen(1337);
-  gutil.log('Listening on port: 1337');
+  app.listen(config.port);
+  gutil.log('Listening on port: ' + config.port);
 });
 
 gulp.task('watch', function () {
   livereload.listen();
-  gulp.watch('src/assets/css/**/*.css',['css']);
-  gulp.watch('src/assets/js/*.js',['js']);
-  gulp.watch('src/*.pug',['templates']);
-  gulp.watch('src/partials/*.*',['templates']);
+  gulp.watch('content/assets/css/**/*.css',['css']);
+  gulp.watch('content/assets/js/*.js',['js']);
+  gulp.watch('content/*.*',['templates']);
 });
 
 gulp.task('css:prod', function() {
@@ -85,7 +85,7 @@ gulp.task('css:prod', function() {
     cssnext({browsers: ['last 1 version']}),
     // opacity,
   ];
-  return gulp.src('src/assets/css/styles.css')
+  return gulp.src('content/assets/css/styles.css')
   .pipe(postcss(processors))
   .pipe(gulp.dest('dist/css'))
 });
@@ -93,12 +93,12 @@ gulp.task('css:prod', function() {
 // create a new publisher using S3 options
 // http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property
 var publisher = awspublish.create({
-  region: 'us-east-1',
+  region: config.awsRegion,
   params: {
-    Bucket: 'nosunoco.com'
+    Bucket: config.awsBucket
   }
 }, {
-  cacheFileName: '/tmp/nosunoco.cache'
+  cacheFileName: config.awsCache
 });
 
 // define custom headers
@@ -125,9 +125,9 @@ gulp.task('publish', function() {
 });
 
 var cfSettings = {
-  distribution: 'E1CYKWAL96AI52', // Cloudfront distribution ID
-  wait: true,                     // Whether to wait until invalidation is completed (default: false)
-  indexRootPath: true             // Invalidate index.html root paths (`foo/index.html` and `foo/`) (default: false)
+  distribution: config.cloudFrontDistID, // Cloudfront distribution ID
+  wait: true,                            // Whether to wait until invalidation is completed (default: false)
+  indexRootPath: true                    // Invalidate index.html root paths (`foo/index.html` and `foo/`) (default: false)
 }
 
 gulp.task('invalidate', function () {

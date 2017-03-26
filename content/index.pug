@@ -1,0 +1,37 @@
+html
+	head
+		title #{title}
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(property="og:title" content=meta["og:title"])
+		meta(property="og:url" content=meta["og:url"])
+		meta(property="fb:app_id" content=fb.app_id)
+		meta(property="og:description" content=meta["og:description"])
+		meta(property="og:image" content=meta["og:image"])
+		meta(name="twitter:card" content="summary_large_image")
+		meta(name="twitter:site" content=meta["twitter:site"])
+		link(rel='stylesheet', href='/css/styles.css')
+		include includes/favicon.html
+		script(src="js/all.min.js")
+body
+	include includes/fb-share-preamble.pug
+	header
+		img(src="/img/" + mainlogo)#main-logo.logo
+		div#promo
+			include header.md
+	section#preamble
+		include:marked preamble.md
+	section#join
+		include includes/embed-actionnetwork.pug
+	section#explanation
+		include:marked explanation.md
+	section#share
+		include includes/fb-share.pug
+		include includes/twitter-share.pug
+	section#connect
+		include:marked connect.md
+		include includes/fb-like-button.pug
+	section#merchandise
+		include:marked merchandise.md
+	footer
+		include:marked disclaimer.md
+	include includes/ga.html
