@@ -3,6 +3,8 @@
 	--yellow: #FFDC00;
 	--red: #D3001D;
 	--white: #FFF;
+
+	--hero: '/img/olb-standing-rock-fist@1024h.jpg';
 }
 
 @custom-media --not-small (min-width: 850px);

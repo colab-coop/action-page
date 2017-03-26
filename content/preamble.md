@@ -1,0 +1,1 @@
+In his first days as president, Trump signed an executive order to force through the development of the Dakota Access Pipeline and instructed the Army Corps of Engineers to ignore due process and grant the DAPL its final easement. Now, drilling might start at any moment.

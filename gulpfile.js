@@ -40,6 +40,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   return gulp.src('content/assets/js/*.js')
+    .pipe(template(config))
     .pipe(uglify())
     .pipe(concat('all.min.js'))
     .pipe(gulp.dest('dist/js'))

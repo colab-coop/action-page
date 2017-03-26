@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-	background: url('/img/olb-standing-rock-fist@1024h.jpg') no-repeat center center fixed;
+	background: url(var(--hero)) no-repeat center center fixed;
 	background-size: cover;
 }
 

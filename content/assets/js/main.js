@@ -1,7 +1,7 @@
 function doOpenFbShare() {
 	FB.ui({
 		method: 'share',
-		href: 'http://nosunoco.com/',
+		href: '<%= fb.ui_href %>',
 	}, function(response){});
 	ga('send', 'event', 'ShareFacebook', 'click', 'Facebook Share');
 }

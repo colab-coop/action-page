@@ -10,27 +10,28 @@ html
 		meta(name="twitter:card" content="summary_large_image")
 		meta(name="twitter:site" content=meta["twitter:site"])
 		link(rel='stylesheet', href='/css/styles.css')
-		include favicon.html
+		include includes/favicon.html
 		script(src="js/all.min.js")
 body
-	include fb-share-preamble.pug
+	include includes/fb-share-preamble.pug
 	header
 		img(src="/img/" + mainlogo)#main-logo.logo
-		include header.pug
+		div#promo
+			include header.md
 	section#preamble
-		include preamble.pug
+		include:marked preamble.md
 	section#join
-		include embed-actionnetwork.pug
+		include includes/embed-actionnetwork.pug
 	section#explanation
 		include:marked explanation.md
 	section#share
-		include fb-share.pug
-		include twitter-share.pug
+		include includes/fb-share.pug
+		include includes/twitter-share.pug
 	section#connect
-		include connect.pug
-		include fb-like-button.pug
+		include:marked connect.md
+		include includes/fb-like-button.pug
 	section#merchandise
-		include merchandise.pug
+		include:marked merchandise.md
 	footer
 		include:marked disclaimer.md
-	include ga.html
+	include includes/ga.html
