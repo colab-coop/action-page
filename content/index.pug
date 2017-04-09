@@ -19,19 +19,19 @@ body
 		div#promo
 			include header.md
 	section#preamble
-		include:marked preamble.md
+		include:markdown-it preamble.md
 	section#join
 		include includes/embed-actionnetwork.pug
 	section#explanation
-		include:marked explanation.md
+		include:markdown-it explanation.md
 	section#share
 		include includes/fb-share.pug
 		include includes/twitter-share.pug
 	section#connect
-		include:marked connect.md
+		include:markdown-it connect.md
 		include includes/fb-like-button.pug
 	section#merchandise
-		include:marked merchandise.md
+		include:markdown-it merchandise.md
 	footer
-		include:marked disclaimer.md
+		include:markdown-it disclaimer.md
 	include includes/ga.html

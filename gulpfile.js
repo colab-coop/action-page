@@ -13,7 +13,6 @@ var gulp        = require('gulp'),
     tinylr      = require('tiny-lr'),
     express     = require('express'),
     app         = express(),
-    marked      = require('marked'), // For :markdown filter in pug
     path        = require('path'),
     server      = tinylr(),
     image       = require('gulp-image'),

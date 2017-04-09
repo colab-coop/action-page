@@ -21,7 +21,7 @@
     "gulp-image": "^2.7.2",
     "gulp-livereload": "^3.8.1",
     "gulp-util": "^3.0.7",
-    "marked": "^0.3.6",
+    "jstransformer-markdown-it": "^2.0.0",
     "postcss-css-reset": "^1.0.2",
     "postcss-import": "^9.1.0",
     "tiny-lr": "^1.0.3"
