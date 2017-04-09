@@ -72,6 +72,7 @@ gulp.task('express', function() {
 
 gulp.task('watch', function () {
   livereload.listen();
+  gulp.watch('content/assets/img/**/*.*',['images']);
   gulp.watch('content/assets/css/**/*.css',['css']);
   gulp.watch('content/assets/js/*.js',['js']);
   gulp.watch('content/*.*',['templates']);
