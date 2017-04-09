@@ -1,3 +1,5 @@
+![Action-Page Logo](content/assets/img/logo.png)
+
 # Action Page
 
 Action Page is a boilerplate for creating compelling, super-fast one-page action
