@@ -5,7 +5,8 @@
 	--red: #D3001D;
 	--white: #FFF;
 
-	--hero: '/img/olb-standing-rock-fist@1024h.jpg';
+	--hero: '/img/background-image@1024h.jpg';
+	--hero-2x: '/img/background-image@2x.jpg' 
 }
 
 @custom-media --not-small (min-width: 850px);
