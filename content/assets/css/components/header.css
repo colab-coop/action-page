@@ -1,11 +1,13 @@
 header {
-	color: var(--white);
+	color: var(--black);
+	padding: 1em;
 	padding-bottom: 1em;
 	padding-top: 1em;
 	height: 100%;
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: rgba(255,255,255,0.5);
 	@media (--not-small) {
 		width: 33%;
 	}
@@ -37,7 +39,7 @@ h1.site-name {
 	line-height: 120%;
 	margin: 0 auto;
 	text-align: center;
-	text-shadow: 2px 2px var(--blue);
+	text-shadow: 2px 2px var(--white);
 	@media (--not-small) {
 		font-size: 2rem;
 	}
