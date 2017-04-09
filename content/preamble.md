@@ -1,1 +1,4 @@
-In his first days as president, Trump signed an executive order to force through the development of the Dakota Access Pipeline and instructed the Army Corps of Engineers to ignore due process and grant the DAPL its final easement. Now, drilling might start at any moment.
+Action-Page is a simple starting point for single-page sites for advocacy
+campaigns. It's free, open source, simple and easy to update. This page was
+made with ActionPage, and to get started all you need to do is clone the
+[project on GitHub](https://github.com/colab-coop/action-page);
