@@ -5,6 +5,8 @@
 Action Page is a boilerplate for creating compelling, super-fast one-page action
 landings for Action Network campaigns using just HTML, CSS and AWS.
 
+To see it in action, check out the demo at http://actionpage.tech/.
+
 ## Installing
 
 Run `git clone https://github.com/colab-coop/action-page.git` to download this
