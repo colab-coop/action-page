@@ -5,7 +5,7 @@ module.exports = {
   awsCache: '/tmp/actionpage.cache',
   cloudFrontDistID: 'ABCD1234',
   title: 'Action-Page Title',
-  mainlogo: 'nosunoco-logo.svg',
+  mainlogo: 'logo.svg',
   actionNetwork: {
     id: 'boycott-sunoco'
   },
