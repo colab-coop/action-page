@@ -19,7 +19,7 @@
                 "s3:PutObjectACL"
             ],
             "Resource": [
-                "arn:aws:s3:::nosunoco.com/*"
+                "arn:aws:s3:::actionpage.tech/*"
             ]
         },
         {
@@ -28,7 +28,7 @@
                 "s3:DeleteObject"
             ],
             "Resource": [
-                "arn:aws:s3:::nosunoco.com/.well-known/*"
+                "arn:aws:s3:::actionpage.tech/.well-known/*"
             ]
         },
         {
@@ -41,7 +41,7 @@
                 "cloudfront:ListInvalidations"
             ],
             "Resource": [
-                "arn:aws:cloudfront:::E1CYKWAL96AI52"
+                "arn:aws:cloudfront:::ABCD1234"
             ]
         }
     ]
