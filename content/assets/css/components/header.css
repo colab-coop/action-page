@@ -1,0 +1,46 @@
+header {
+	color: var(--black);
+	padding: 1em;
+	padding-bottom: 1em;
+	padding-top: 1em;
+	height: 100%;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(255,255,255,0.5);
+	@media (--not-small) {
+		width: 33%;
+	}
+}
+
+#main-logo {
+	display: block;
+	width: 100%;
+}
+
+h1.site-name {
+	color: var(--yellow);
+	padding: 0 0;
+	margin: 0 0;
+	line-height: 100%;
+	font-style: italic;
+	/*margin: 0 auto;*/
+}
+
+.site-name-no {
+	/*color: var(--red);*/
+	text-decoration: underline;
+}
+
+#promo {
+	font-family: Teko, sans-serif;
+	font-weight: 500;
+	font-size: 1.5rem;
+	line-height: 120%;
+	margin: 0 auto;
+	text-align: center;
+	text-shadow: 2px 2px var(--white);
+	@media (--not-small) {
+		font-size: 2rem;
+	}
+}

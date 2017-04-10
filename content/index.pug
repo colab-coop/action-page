@@ -1,0 +1,43 @@
+html
+	head
+		title #{title}
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(property="og:title" content=meta["og:title"])
+		meta(property="og:url" content=meta["og:url"])
+		meta(property="fb:app_id" content=fb.app_id)
+		meta(property="og:description" content=meta["og:description"])
+		meta(property="og:image" content=meta["og:image"])
+		meta(name="twitter:card" content="summary_large_image")
+		meta(name="twitter:site" content=meta["twitter:site"])
+		link(rel='stylesheet', href='/css/styles.css')
+		include includes/favicon.html
+		script(src="js/all.min.js")
+body
+	include includes/fb-share-preamble.pug
+	header
+		img(src="/img/" + mainlogo)#main-logo.logo
+		div#promo
+			include:markdown-it header.md
+			i.material-icons arrow_downward
+			i.material-icons arrow_downward
+			i.material-icons arrow_downward
+			
+	section#preamble
+		include:markdown-it preamble.md
+	if sections.actionNetwork
+		section#join
+			include includes/embed-actionnetwork.pug
+	section#explanation
+		include:markdown-it explanation.md
+	if sections.socialShare
+		section#share
+			include includes/fb-share.pug
+			include includes/twitter-share.pug
+	section#connect
+		include:markdown-it connect.md
+		include includes/fb-like-button.pug
+	section#merchandise
+		include:markdown-it bottom-content.md
+	footer
+		include:markdown-it disclaimer.md
+	include includes/ga.html

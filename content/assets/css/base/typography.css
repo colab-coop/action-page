@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Teko|Open Sans');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+	font-family: Open Sans, sans-serif;
+	color: var(--black);
+	font-size: 1rem;
+}
+
+html {
+	font-size: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Teko;
+	font-weight: bold;
+	text-align: center;
+}
+
+h1 {
+	font-size: 5rem;
+	@media (--not-small) {
+		font-size: 10rem;
+	}
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 100%;
+	text-align: left;
+	margin-bottom: 1rem;
+	font-family: Open Sans, sans-serif;
+	& strong {
+		font-weight: bolder;
+		text-decoration: underline;
+	}
+}
+
+a {
+	color: var(--red);
+	text-decoration: none;
+	&:visited {
+		color: var(--red);
+	}
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+ul {
+   list-style-type: initial;
+   list-style-position: outside;
+	 margin-left: 2rem;
+	 margin-bottom: 1rem;
+	 margin-top: 1rem;
+}
+
+li {
+	 display: list-item;
+}

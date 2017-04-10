@@ -1,0 +1,16 @@
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	background: url(var(--hero)) no-repeat center center fixed;
+	background-size: cover;
+	@media (--large) {
+		background-image: url(var(--hero-2x));
+	}
+}
+
+section {
+	background-color: white;
+}
