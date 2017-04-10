@@ -17,16 +17,22 @@ body
 	header
 		img(src="/img/" + mainlogo)#main-logo.logo
 		div#promo
-			include header.md
+			include:markdown-it header.md
+			i.material-icons arrow_downward
+			i.material-icons arrow_downward
+			i.material-icons arrow_downward
+			
 	section#preamble
 		include:markdown-it preamble.md
-	section#join
-		include includes/embed-actionnetwork.pug
+	if sections.actionNetwork
+		section#join
+			include includes/embed-actionnetwork.pug
 	section#explanation
 		include:markdown-it explanation.md
-	section#share
-		include includes/fb-share.pug
-		include includes/twitter-share.pug
+	if sections.socialShare
+		section#share
+			include includes/fb-share.pug
+			include includes/twitter-share.pug
 	section#connect
 		include:markdown-it connect.md
 		include includes/fb-like-button.pug
